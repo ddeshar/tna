@@ -32,8 +32,11 @@ class BannersController extends Controller{
         $banner->banner_description     = $request->banner_description;
         $banner->banner_class           = $request->banner_class;
         $banner->banner_status          = $request->banner_status;
-        
-        $banner->banner_image           = $request->banner_image;
+        $banner->banner_link            = $request->banner_link;
+        $banner->banner_position        = $request->banner_position;        
+        // $banner->banner_image           = $request->banner_image;
+
+        $bannerposition = $request->banner_position;
 
         // Check if file is present
         if( $request->hasFile('banner_image') ) {
@@ -43,7 +46,13 @@ class BannersController extends Controller{
             // make upload photo path variable
             $location = public_path('images/banners/' . $filename );
             // use intervention library and save photo to path
-            Image::make($image)->resize(1920, 1280)->save($location);
+            if($bannerposition == 1){ // intro will use this
+                Image::make($image)->resize(1920, 1280)->save($location);
+            }elseif($bannerposition == 2){ //sponsor will use this
+                Image::make($image)->resize(1920, 1280)->save($location);
+            }elseif($bannerposition == 3){ //gallery will use this
+                Image::make($image)->resize(1920, 1280)->save($location);
+            }
             // Set user image
             $banner->banner_image = $filename;
         }
@@ -75,6 +84,8 @@ class BannersController extends Controller{
         $banner->banner_description     = $request->banner_description;
         $banner->banner_class           = $request->banner_class;
         $banner->banner_status          = $request->banner_status;
+        $banner->banner_link            = $request->banner_link;
+        $banner->banner_position        = $request->banner_position;
 
         $oldFilename                    = $banner->banner_image;
 

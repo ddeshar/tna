@@ -30,7 +30,7 @@
                                 <?php $i++ ?>
                                 <td>{{ $i }}</td>
                                 <td>{{ $quote->quote_detail or "" }}</td>
-                                <td>{{ $quote->author->author_name or "" }}</td>
+                                <td>{{ $quote->Boardmembers->board_name or "" }}</td>
                                 <td>
                                     <div class="btn-group pull-right">
                                         <a class="btn btn-primary" href="{{ route('quotes.show', $quote->quotes_id) }}"><i class="fa fa-lg fa-eye"></i></a>

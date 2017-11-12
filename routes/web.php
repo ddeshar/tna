@@ -37,7 +37,6 @@ Route::group([
       'posttag' => 'PosttagController',
       'quotes' => 'QuotesController',
       'settings' => 'SettingsController',
-      'sponsor' => 'SponsorController',
       'tags' => 'TagsController'
     ]);
 

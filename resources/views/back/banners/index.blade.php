@@ -8,6 +8,14 @@
 
 @section('content')
 
+<?php
+    $position = array(
+        '1' => 'intro',
+        '2' => 'sponsor',
+        '3' => 'gallery'
+    );
+?>
+
     <div class="col-md-12">
         <div class="card">
             <div class="card-title-w-btn">
@@ -21,7 +29,9 @@
                             <th>Id</th>
                             <th>Title</th>
                             <th>Image</th>
+                            <th>Position</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +42,8 @@
                                 <td>{{ $i }}</td>
                                 <td>{{ $banner->banner_title or "" }}</td>
                                 <td>{{ $banner->banner_image or "" }}</td>
+                                <td>{{ $banner->banner_positon or "" }}</td>
+                                <td>{{ $banner->banner_status or "" }}</td>
                                 <td>
                                     <div class="btn-group pull-right">
                                         <a class="btn btn-primary" href="{{ route('banners.show', $banner->banner_id) }}"><i class="fa fa-lg fa-eye"></i></a>
