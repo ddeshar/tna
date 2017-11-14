@@ -29,12 +29,12 @@
                 <!-- Left Sidebar -->
                 <div class="span9">
         
-                    @foreach ($newss as $news)
-                        @include('front.layouts.partials._article_blog')
+                    @foreach($ta->Posts as $news)
+                         @include('front.layouts.partials._article_blog')
                     @endforeach
                 </div><!--/span9-->
             </div><!--/row-fluid-->        
-                    {{$newss->links()}}
+                    
         </div><!--/container-->		
     <!--=== End Content Part ===-->
 

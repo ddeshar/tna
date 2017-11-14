@@ -4,36 +4,21 @@
     <div class="headline"><h3>Our Services</h3></div>
 	<div class="row-fluid service-alternative">    	
         <div class="span4">
-    		<div class="service clearfix">
-    			<div class="circle">
-    				<i class="icon-resize-small"></i>
-    			</div>
-    			<div class="desc">
-    				<h4>Fully Responsive</h4>
-                    <p>Lorem ipsum dolor sit amet, Morem ipsum dolor sit amet consectetur adipisicing elit. Award winning digital agency. We bring a personal and effective approach to every project we work on.</p>
-    			</div>
+    		<div class="service">
+                <h4>{{ $first_post->title }}</h4>
+                <p>{{ $first_post->body }}</p>
     		</div>	
     	</div>
     	<div class="span4">
-    		<div class="service clearfix">
-    			<div class="circle">
-    				<i class="icon-cogs"></i>
-    			</div>
-    			<div class="desc">
-    				<h4>HTML5+CSS3</h4>
-                    <p>Lorem ipsum dolor sit amet, Morem ipsum dolor sit amet consectetur adipisicing elit. Award winning digital agency. We bring a personal and effective approach to every project we work on.</p>
-    			</div>
+    		<div class="service">
+                <h4>{{ $second_post->title }}</h4>
+                <p>{{ $second_post->body }}</p>
     		</div>	
     	</div>
     	<div class="span4">
-    		<div class="service clearfix">
-    			<div class="circle">
-    				<i class="icon-plane"></i>
-    			</div>
-    			<div class="desc">
-    				<h4>Launch Ready</h4>
-                    <p>Lorem ipsum dolor sit amet, Morem ipsum dolor sit amet consectetur adipisicing elit. Award winning digital agency. We bring a personal and effective approach to every project we work on.</p>
-    			</div>
+    		<div class="service">
+                <h4>{{ $third_post->title }}</h4>
+                <p>{{ $third_post->body }}</p>
     		</div>	
     	</div>			    
 	</div><!--/row-fluid-->

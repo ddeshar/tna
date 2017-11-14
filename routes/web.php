@@ -18,6 +18,7 @@ Route::get('/board_members', 'FrontController@board_members')->name('board_membe
 Route::get('/contact', 'FrontController@contact')->name('contact');
 Route::get('/article/{slug}', 'FrontController@article')->name('article');
 Route::get('/category/{slug}', 'FrontController@category')->name('category');
+Route::get('/tags/{tag}', 'FrontController@tag')->name('tags');
 
 Auth::routes();
 

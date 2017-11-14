@@ -9,7 +9,7 @@
             <li>
                 <i class="icon-tags"></i> 
                 @foreach($news->tags as $tag)
-                    <a href="#" >{{ $tag->tag }}</a>
+                    <a href="{{ route('tags', ['tag' => $tag->tag ]) }}" >{{ $tag->tag }}</a>
                 @endforeach
             </li>
         </ul>

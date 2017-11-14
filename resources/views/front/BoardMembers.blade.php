@@ -25,7 +25,11 @@
     <!--=== End Breadcrumbs ===-->
 
     <!--=== Content Part ===-->
-        <div class="container portfolio-columns portfolio-responsive">
+    <div class="container">	
+    @include('front.layouts.partials.tnateam')
+</div>
+    <hr><br><br>
+    <div class="container portfolio-columns portfolio-responsive">
             @foreach ($members as $member)
                 <div class="view view-tenth span3">
                     <img src="{{ asset('images/board/'. $member->board_image  ) }}" alt="" />

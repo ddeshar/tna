@@ -24,7 +24,8 @@ body {
 
 p, a, li { 
 	color:#555;
-	line-height:1.6; 
+	line-height:1.6;
+	text-align: justify;
 }
 
 a,

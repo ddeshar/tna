@@ -9,7 +9,7 @@
         </div>
         <!-- Sidebar Menu-->
         <ul class="sidebar-menu">
-            <li class="{!! (Request::is('admin') ? 'class="active"' : '') !!}"><a href="{{ url('/admin') }}"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+            <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{ url('/admin') }}"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
             <li class="{{ Request::is('admin/banners*') ? 'active' : '' }}"><a href="{{ url('/admin/banners') }}"><i class="fa fa-dashboard"></i><span>Banners</span></a></li>
             <li class="{{ Request::is('admin/board*') ? 'active' : '' }}"><a href="{{ url('/admin/board') }}"><i class="fa fa-dashboard"></i><span>Board Members</span></a></li>
             <li class="{{ Request::is('admin/categories*') ? 'active' : '' }}"><a href="{{ url('/admin/categories') }}"><i class="fa fa-dashboard"></i><span>Categories</span></a></li>

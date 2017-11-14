@@ -65,8 +65,6 @@ class PostsController extends Controller{
     public function show($id){
         $post = Posts::findOrFail($id);
         
-        $post->increment('view_count');
-
         return view('back.posts.show', compact('post'));
     }
     

@@ -25,7 +25,7 @@
                         <tr>
                             <th>id</th>
                             <th>Title</th>
-                            <th>category</th>
+                            <th>excerpt</th>
                             <th>Status</th>
                             <th>featured</th>
                             <th>Action</th>
