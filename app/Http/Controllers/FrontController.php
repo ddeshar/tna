@@ -6,8 +6,8 @@ use App\Banners;
 use App\Posts;
 use App\Quotes;
 use App\Boardmembers;
-use App\Tag;
 use App\Categories;
+use App\Tags;
 
 use Illuminate\Http\Request;
 
@@ -38,8 +38,9 @@ class FrontController extends Controller{
 
         $postfooters = Posts::orderBy('created_at', 'desc')->take(3)->get();
         $posts = Posts::orderBy('created_at', 'desc')->take(5)->get();
+        $tags = Tags::all();
 
-        return view('front.news', compact('postfooters','posts','newss'));
+        return view('front.news', compact('postfooters','posts','newss','tags'));
     }
 
     public function board_members(){
@@ -65,12 +66,15 @@ class FrontController extends Controller{
 
         $postfooters = Posts::orderBy('created_at', 'desc')->take(3)->get();
         $posts = Posts::orderBy('created_at', 'desc')->take(5)->get();
+
+        $tags = Tags::all();
         
-        return view('front.article', compact('postfooters','posts','article'));
+        
+        return view('front.article', compact('postfooters','posts','article','tags'));
     }
 
-    public function category($id){
-        $categorys = Categories::find($id);
+    public function category($slug){
+        $categorys = Categories::where('slug', $slug)->first();
 
         $postfooters = Posts::orderBy('created_at', 'desc')->take(3)->get();
         $posts = Posts::orderBy('created_at', 'desc')->take(5)->get();

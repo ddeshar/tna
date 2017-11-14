@@ -28,7 +28,10 @@
                         Category: {{ $categorys->name }}
                 <!-- Left Sidebar -->
                 <div class="span9">
-        
+
+                    @foreach($categorys->post as $news)
+                         @include('front.layouts.partials._article_blog')
+                    @endforeach
 
                 </div><!--/span9-->
             </div><!--/row-fluid-->        

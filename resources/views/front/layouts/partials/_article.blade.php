@@ -3,7 +3,7 @@
         <h3>{{ $article->title }}</h3>
         <ul class="unstyled inline blog-info">
             <li><i class="icon-calendar"></i>{{ $article->created_at->toFormattedDateString() }}</li>
-            <li><i class="icon-pencil"></i> Diana Anderson</li>
+            {{--  <li><i class="icon-pencil"></i> Diana Anderson</li>  --}}
             <a href="{{ route('category', ['slug' => $article->category->slug ]) }}">{{ $article->category->name }}</a>
 
             {{--  <li><i class="icon-comments"></i> <a href="#">24 Comments</a></li>  --}}
