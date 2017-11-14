@@ -87,10 +87,10 @@
 @endsection
 
 @section('footer_scripts')
-    <script type="text/javascript" src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZoXvFadLW3GC8Dd1Vc9AY1VhrFHCfxdM&callback=initMap"></script>
-    <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
-    <script type="text/javascript" src="assets/plugins/gmap/gmap.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/flexslider/jquery.flexslider-min.js')}}"></script>
 
-    <script type="text/javascript" src="assets/js/pages/contact.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZoXvFadLW3GC8Dd1Vc9AY1VhrFHCfxdM&callback=initMap"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/gmap/gmap.js')}}"></script>
+
+    <script type="text/javascript" src="{{ asset('assets/js/pages/contact.js')}}"></script>
 @endsection

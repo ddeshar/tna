@@ -19,7 +19,8 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Title</th>
+                            <th>Name</th>
+                            <th>Position</th>
                             <th>Image</th>
                             <th>Status</th>
                         </tr>
@@ -30,6 +31,7 @@
                             <tr>
                                 <?php $i++ ?>
                                 <td>{{ $i }}</td>
+                                <td>{{ $board->board_name or "" }}</td>
                                 <td>{{ $board->board_position or "" }}</td>
                                 <td>{{ $board->board_image or "" }}</td>
                                 <td>

@@ -32,10 +32,9 @@
     <!--=== End Copyright ===-->
 @endsection
 
-
 @section('footer_scripts')
-    <script type="text/javascript" src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-    <script type="text/javascript" src="assets/plugins/horizontal-parallax/js/sequence.jquery-min.js"></script>
-    <script type="text/javascript" src="assets/plugins/horizontal-parallax/js/horizontal-parallax.js"></script>
-    <script type="text/javascript" src="assets/plugins/bxslider/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/flexslider/jquery.flexslider-min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/horizontal-parallax/js/sequence.jquery-min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/horizontal-parallax/js/horizontal-parallax.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/bxslider/jquery.bxslider.js')}}"></script>
 @endsection

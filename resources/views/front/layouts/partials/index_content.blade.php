@@ -48,78 +48,22 @@
             <div class="headline"><h3>News</h3></div>
             <div class="row-fluid margin-bottom-40">
                 <ul id="list" class="bxslider recent-work">
+
+                @foreach ($newss as $news)
                     <li>
-                        <a href="#">
-                            <em class="overflow-hidden"><img src="assets/img/carousel/2.jpg" alt="" /></em>
+                        <a href="{{ route('article', ['slug' => $news->slug ]) }}">
+                            <em class="overflow-hidden"><img src="{{ asset('images/posts/'. $news->image  ) }}" alt="{{ $news->title }}" /></em>
                             <span>
-                                <strong>Happy New Year</strong>
-                                <i>Anim pariatur cliche reprehenderit</i>
+                                <strong>{{ $news->title or "" }}</strong>
+                                <i>{{ str_limit($news->body, $limit = 30, $end = '...')}}</i>
                             </span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <em class="overflow-hidden"><img src="assets/img/carousel/9.jpg" alt="" /></em>
-                            <span>
-                                <strong>Award Winning Agency</strong>
-                                <i>Responsive Bootstrap Template</i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <em class="overflow-hidden"><img src="assets/img/carousel/4.jpg" alt="" /></em>
-                            <span>
-                                <strong>Wolf Moon Officia</strong>
-                                <i>Pariatur prehe cliche reprehrit</i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <em class="overflow-hidden"><img src="assets/img/carousel/5.jpg" alt="" /></em>
-                            <span>
-                                <strong>Food Truck Quinoa Nesciunt</strong>
-                                <i>Craft labore wes anderson cred</i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <em class="overflow-hidden"><img src="assets/img/carousel/6.jpg" alt="" /></em>
-                            <span>
-                                <strong>Happy New Year</strong>
-                                <i>Anim pariatur cliche reprehenderit</i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <em class="overflow-hidden"><img src="assets/img/carousel/7.jpg" alt="" /></em>
-                            <span>
-                                <strong>Award Winning Agency</strong>
-                                <i>Responsive Bootstrap Template</i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <em class="overflow-hidden"><img src="assets/img/carousel/8.jpg" alt="" /></em>
-                            <span>
-                                <strong>Wolf Moon Officia</strong>
-                                <i>Pariatur prehe cliche reprehrit</i>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <em class="overflow-hidden"><img src="assets/img/carousel/9.jpg" alt="" /></em>
-                            <span>
-                                <strong>Food Truck Quinoa Nesciunt</strong>
-                                <i>Craft labore wes anderson cred</i>
-                            </span>
-                        </a>
-                    </li>
+                @endforeach
+
+
+
+
                 </ul>
             </div><!--/row-->
             <!-- //End News  -->
@@ -135,29 +79,28 @@
                         <div class="item active">
                             <div class="testimonial">
                                 <div class="testimonial-body">
-                                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
-                                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.</p>	
+                                    <p>I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.</p>
                                 </div>
                                 <div class="testimonial-author">
                                     <span class="arrow"></span>
-                                    <span class="name">John Smith</span>, CEO, Pixel Ltd. 
+                                    <span class="name">Dipendra Deshar</span>, Web Administrator, Wami On Code. 
                                 </div>
                             </div>
                         </div><!--/carousel-inner-->
 
-                        <!-- Item -->
+                    @foreach ($quotes as $quote)
                         <div class="item">
                             <div class="testimonial">
                                 <div class="testimonial-body">
-                                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc.</p>	
-                                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>							       		
+                                <p>{{ $quote->quote_detail or "" }}</p>
                                 </div>
                                 <div class="testimonial-author">
                                     <span class="arrow"></span>
-                                    <span class="name">Lisa Cooper</span>, Art Director, Loop Inc.
+                                    <span class="name">{{ $quote->Boardmembers->board_name or "" }}</span>, {{ $quote->Boardmembers->board_position or "" }}
                                 </div>
                             </div>
-                        </div><!--/item-->
+                        </div><!--/carousel-inner-->
+                    @endforeach
                     </div><!--/testimonal_carousel-->
                     
                     <!-- Carousel nav -->						  
@@ -172,25 +115,23 @@
                     <div class="headline"><h3>Latest Shots</h3></div>
                     <div id="myCarousel" class="carousel slide">
                         <div class="carousel-inner">
-                        <div class="item">
-                            <img src="assets/img/carousel/5.jpg" alt="">
-                            <div class="carousel-caption">
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas.</p>
+                            @if(count($gallerys == null))
+                                @foreach ($gallerys as $gallery)
+                                    <div class="item">
+                                        <img src="{{ asset('images/banners/'. $gallery->banner_image  ) }}" alt="{{ $gallery->banner_description or "" }}">
+                                        <div class="carousel-caption">
+                                        <p>{{ $gallery->banner_name or "" }}</p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                            <div class="item active">
+                                <img src="assets/img/carousel/3.jpg" alt="">
+                                <div class="carousel-caption">
+                                <p>Welcome to tna official</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/carousel/4.jpg" alt="">
-                            <div class="carousel-caption">
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas.</p>
                             </div>
-                        </div>
-                        <div class="item active">
-                            <img src="assets/img/carousel/3.jpg" alt="">
-                            <div class="carousel-caption">
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas.</p>
-                            </div>
-                        </div>
-                        </div>
                         
                         <div class="carousel-arrow">
                             <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="icon-angle-left"></i></a>
@@ -208,7 +149,7 @@
                 @include('front.layouts.partials._Latest_Update')
 
             <!-- TNA in Media -->
-            <div class="blog-twitter">
+            {{--  <div class="blog-twitter">
                 <div class="headline"><h3>TNA in Media</h3></div>
                 <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
                 <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
@@ -217,7 +158,7 @@
                 <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
                 <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
                 <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
-            </div>
+            </div>  --}}
 
         </div><!--/span3-->
     </div><!--/row-fluid-->

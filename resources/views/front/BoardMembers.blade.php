@@ -11,7 +11,8 @@
 @section('og-description', '')
 
 @section('header_styles')
-    <link rel="stylesheet" href="assets/css/img-hover-effect.css" />    
+
+    <link rel="stylesheet" href="{{ asset('assets/css/img-hover-effect.css')}}" />    
 @endsection
 
 @section('content')
@@ -24,97 +25,17 @@
     <!--=== End Breadcrumbs ===-->
 
     <!--=== Content Part ===-->
-        <div class="container portfolio-columns portfolio-responsive"> 	
-            <div class="row-fluid"> 
+        <div class="container portfolio-columns portfolio-responsive">
+            @foreach ($members as $member)
                 <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/1.jpg" alt="" />
+                    <img src="{{ asset('images/board/'. $member->board_image  ) }}" alt="" />
                     <div class="mask">
-                        <h2>Portfolio Item1</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
+                        <h2>{{ $member->board_name or "" }}</h2>
+                        <p>{{ $member->board_position or "" }}</p>
+                        {{--  <a href="portfolio_item.html" class="info">Read More</a>  --}}
                     </div>
                 </div>
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/2.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item2</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/3.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item3</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/4.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item4</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-            </div><!--/row-fluid-->         
-            <div class="row-fluid"> 
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/5.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item1</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/6.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item2</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/7.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item3</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/8.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item4</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-            </div><!--/row-fluid-->         
-            <div class="row-fluid"> 
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/9.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item1</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/10.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item2</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/3.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item3</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-                <div class="view view-tenth span3">
-                    <img src="assets/img/carousel/4.jpg" alt="" />
-                    <div class="mask">
-                        <h2>Portfolio Item4</h2>
-                        <a href="portfolio_item.html" class="info">Read More</a>
-                    </div>
-                </div>
-            </div><!--/row-fluid-->         
+            @endforeach
         </div><!--/container-->
     <!--=== End Content Part ===-->
 

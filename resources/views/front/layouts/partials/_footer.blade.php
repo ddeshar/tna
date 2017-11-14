@@ -20,24 +20,14 @@
 			<div class="span4">
                 <div class="posts">
                     <div class="headline"><h3>Recent Blog Entries</h3></div>
-                    <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
-                        <dd>
-                            <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p>
-                        </dd>
-                    </dl>
-                    <dl class="dl-horizontal">
-                    <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
-                        <dd>
-                            <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p>
-                        </dd>
-                    </dl>
-                    <dl class="dl-horizontal">
-                    <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
-                        <dd>
-                            <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p>
-                        </dd>
-                    </dl>
+                    @foreach ($postfooters as $postfooter)
+                        <dl class="dl-horizontal">
+                            <dt><a href="{{ route('article', ['slug' => $postfooter->slug ]) }}"><img src="{{ asset('images/posts/'. $postfooter->image  ) }}" alt="{{ $postfooter->title }}" /></a></dt>
+                            <dd>
+                                <p><a href="{{ route('article', ['slug' => $postfooter->slug ]) }}">{{ $postfooter->title or "" }}</a></p> 
+                            </dd>
+                        </dl>
+                    @endforeach
                 </div>
 			</div><!--/span4-->
 

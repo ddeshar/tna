@@ -17,12 +17,12 @@
     <!-- Tabs Widget -->
     <br>
     <!-- <div class="headline"><h3>Tabs Widget</h3></div> -->
-    <ul class="nav nav-tabs tabs">
+    {{--  <ul class="nav nav-tabs tabs">
         <li class="active"><a href="#home" data-toggle="tab">latest Post</a></li>
         <li><a href="#profile" data-toggle="tab">Popular Post</a></li>
-    </ul><!--/tabs-->
+    </ul><!--/tabs-->  --}}
 
-    <div class="tab-content">
+    {{--  <div class="tab-content">
         <div class="tab-pane active" id="home">
             <div class="blog-twitter">
                 <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
@@ -45,6 +45,6 @@
                 <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
             </div>
         </div>
-    </div><!--/tab-content-->
+    </div><!--/tab-content-->  --}}
 
 </div><!--/span3-->

@@ -20,7 +20,20 @@
     <!--=== End Breadcrumbs ===-->
 
     <!--=== Content Part ===-->
-        @include('front.layouts.partials.about_content')
+        <div class="container">		
+            <div class="row-fluid blog-page">
+                <!-- Right Sidebar -->
+                    @include('front.layouts._right_sidebar')
+
+                        Category: {{ $categorys->name }}
+                <!-- Left Sidebar -->
+                <div class="span9">
+        
+
+                </div><!--/span9-->
+            </div><!--/row-fluid-->        
+                    {{--  {{$newss->links()}}  --}}
+        </div><!--/container-->		
     <!--=== End Content Part ===-->
 
     <!--=== Footer ===-->
@@ -33,5 +46,5 @@
 @endsection
 
 @section('footer_scripts')
-<script type="text/javascript" src="{{ asset('assets/plugins/flexslider/jquery.flexslider-min.js')}}"></script>
+
 @endsection

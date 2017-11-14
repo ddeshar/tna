@@ -47,9 +47,9 @@ class BannersController extends Controller{
             $location = public_path('images/banners/' . $filename );
             // use intervention library and save photo to path
             if($bannerposition == 1){ // intro will use this
-                Image::make($image)->resize(1920, 1280)->save($location);
+                Image::make($image)->save($location);
             }elseif($bannerposition == 2){ //sponsor will use this
-                Image::make($image)->resize(1920, 1280)->save($location);
+                Image::make($image)->resize(144, 144)->save($location);
             }elseif($bannerposition == 3){ //gallery will use this
                 Image::make($image)->resize(1920, 1280)->save($location);
             }
@@ -88,6 +88,7 @@ class BannersController extends Controller{
         $banner->banner_position        = $request->banner_position;
 
         $oldFilename                    = $banner->banner_image;
+        $bannerposition = $request->banner_position;
 
         // Check if file is present
         if( $request->hasFile('banner_image') ) {
@@ -97,7 +98,13 @@ class BannersController extends Controller{
             // make upload photo path variable
             $location = public_path('images/banners/' . $filename );
             // use intervention library and save photo to path
-            Image::make($image)->resize(1920, 1980)->save($location);
+                if($bannerposition == 1){ // intro will use this
+                    Image::make($image)->save($location);
+                }elseif($bannerposition == 2){ //sponsor will use this
+                    Image::make($image)->resize(144, 144)->save($location);
+                }elseif($bannerposition == 3){ //gallery will use this
+                    Image::make($image)->resize(973, 615)->save($location);
+                }
             // Set user image
             $banner->banner_image = $filename;
             // delete the old photo

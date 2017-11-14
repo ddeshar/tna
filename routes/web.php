@@ -16,7 +16,8 @@ Route::get('/about', 'FrontController@about')->name('about');
 Route::get('/news', 'FrontController@news')->name('news');
 Route::get('/board_members', 'FrontController@board_members')->name('board_members');
 Route::get('/contact', 'FrontController@contact')->name('contact');
-Route::get('/article', 'FrontController@article')->name('article');
+Route::get('/article/{slug}', 'FrontController@article')->name('article');
+Route::get('/category/{slug}', 'FrontController@category')->name('category');
 
 Auth::routes();
 
