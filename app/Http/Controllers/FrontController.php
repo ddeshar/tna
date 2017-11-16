@@ -23,9 +23,9 @@ class FrontController extends Controller{
         $posts = Posts::orderBy('created_at', 'desc')->take(10)->get();
         $postfooters = Posts::orderBy('created_at', 'desc')->take(3)->get();
 
-        $first_post = Pages::orderBy('created_at', 'desc')->first();
-        $second_post = Pages::orderBy('created_at', 'desc')->skip(1)->take(1)->get()->first();
-        $third_post = Pages::orderBy('created_at', 'desc')->skip(2)->take(1)->get()->first();
+        $first_post = Pages::orderBy('created_at', 'ASC')->first();
+        $second_post = Pages::orderBy('created_at', 'ASC')->skip(1)->take(1)->get()->first();
+        $third_post = Pages::orderBy('created_at', 'ASC')->skip(2)->take(1)->get()->first();
 
         
         return view('front.index', compact('banners','sponsors','gallerys','posts','newss','quotes','postfooters','first_post','second_post','third_post'));
@@ -37,8 +37,9 @@ class FrontController extends Controller{
         $sponsors = Banners::all()->where('banner_position', '=', 2)->where('banner_status', '=', 'PUBLISHED');
         $posts = Posts::orderBy('created_at', 'desc')->take(5)->get();
         $postfooters = Posts::orderBy('created_at', 'desc')->take(3)->get();
+        $members = Boardmembers::orderBy('board_year', 'desc')->take(5)->get();
         
-        return view('front.about', compact('postfooters','posts','sponsors','aboutus'));
+        return view('front.about', compact('postfooters','posts','sponsors','aboutus','members'));
     }
 
     public function news(){

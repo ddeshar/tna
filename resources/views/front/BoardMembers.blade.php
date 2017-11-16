@@ -26,21 +26,8 @@
 
     <!--=== Content Part ===-->
     <div class="container">	
-    @include('front.layouts.partials.tnateam')
-</div>
-    <hr><br><br>
-    <div class="container portfolio-columns portfolio-responsive">
-            @foreach ($members as $member)
-                <div class="view view-tenth span3">
-                    <img src="{{ asset('images/board/'. $member->board_image  ) }}" alt="" />
-                    <div class="mask">
-                        <h2>{{ $member->board_name or "" }}</h2>
-                        <p>{{ $member->board_position or "" }}</p>
-                        {{--  <a href="portfolio_item.html" class="info">Read More</a>  --}}
-                    </div>
-                </div>
-            @endforeach
-        </div><!--/container-->
+        @include('front.layouts.partials.tnateam')
+    </div>
     <!--=== End Content Part ===-->
 
     <!--=== Footer ===-->

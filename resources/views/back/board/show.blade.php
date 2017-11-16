@@ -20,6 +20,11 @@
             <div class="row">
                 <div class="col-lg-4">
                     <p>{{$board->board_name}}</p>
+
+{{ $board->department->department_name }}
+{{ $board->position->bpost_name }}
+{{ $board->province->PROVINCE_NAME_ENG }}
+
                 </div>
                 <div class="col-lg-4">
                     <p>{{$board->board_year}}</p>

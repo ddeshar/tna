@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Logo -->
         <div class="logo">
-            <a href="index.html"><img id="logo-header" src="assets/img/logo2-default.png" alt="Logo" /></a>
+            <a href="index.html"><img id="logo-header" src="{{ asset('assets/img/logo2-default.png') }}" alt="Logo" /></a>
         </div><!-- /logo -->
 
         <!-- Menu -->
