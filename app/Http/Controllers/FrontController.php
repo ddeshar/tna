@@ -10,7 +10,11 @@ use App\Posts;
 use App\Quotes;
 use App\Tags;
 
+use Mail;
+use Session;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class FrontController extends Controller{
     public function index(){
@@ -67,6 +71,30 @@ class FrontController extends Controller{
         $sponsors = Banners::all()->where('banner_position', '=', 2)->where('banner_status', '=', 'PUBLISHED');
         
         return view('front.contact', compact('postfooters','posts','sponsors'));
+    }
+
+    public function postContact(Request $request){
+        $this->validate($request, [
+                'email' => 'required|email',
+                'subject' => 'min:3',
+                'message' => 'min:10'
+            ]);
+        
+        $data = array(
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'bodyMessage' => $request->message
+        );
+
+        Mail::send('front.layouts.contact', $data, function($message) use ($data){
+            $message->from($data['email']);
+            $message->to('jedeshar@gmail.com');
+            $message->subject($data['subject']);
+        });
+
+        Session::flash('success', 'Your Email was sent!');
+
+        return redirect('/');
     }
 
     public function article($slug){

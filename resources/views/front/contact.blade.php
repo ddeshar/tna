@@ -29,7 +29,7 @@
 		<div class="span9">
             <div class="headline"><h3>Contacts</h3></div>
             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit landitiis.</p><br />
-			<form />
+			<!-- <form />
                 <label>Name</label>
                 <input type="text" class="span7 border-radius-none" />
                 <label>Email <span class="color-red">*</span></label>
@@ -37,6 +37,16 @@
                 <label>Message</label>
                 <textarea rows="8" class="span10"></textarea>
                 <p><button type="submit" class="btn-u">Send Message</button></p>
+            </form> -->
+             <form method="POST" action="{{ url('/postcontact') }}">
+                {{ csrf_field() }}
+                <label>Name</label>
+                <input type="text" name="subject" class="span7 border-radius-none" />
+                <label>Email <span class="color-red">*</span></label>
+                <input type="text" name="email" class="span7 border-radius-none" />
+                <label>Message</label>
+                <textarea rows="8" name="message" class="span10"></textarea>
+                <p><button type="submit"  class="btn-u">Send Message</button></p>
             </form>
         </div><!--/span9-->
         

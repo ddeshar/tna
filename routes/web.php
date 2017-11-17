@@ -16,6 +16,7 @@ Route::get('/about', 'FrontController@about')->name('about');
 Route::get('/news', 'FrontController@news')->name('news');
 Route::get('/board_members', 'FrontController@board_members')->name('board_members');
 Route::get('/contact', 'FrontController@contact')->name('contact');
+Route::post('/postcontact', 'FrontController@postContact')->name('Postcontact');
 Route::get('/article/{slug}', 'FrontController@article')->name('article');
 Route::get('/category/{slug}', 'FrontController@category')->name('category');
 Route::get('/tags/{tag}', 'FrontController@tag')->name('tags');
