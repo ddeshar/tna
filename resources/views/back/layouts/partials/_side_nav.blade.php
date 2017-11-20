@@ -3,8 +3,8 @@
         <div class="user-panel">
         <div class="pull-left image"><img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image"></div>
         <div class="pull-left info">
-            <p>John Doe</p>
-            <p class="designation">Frontend Developer</p>
+            <p>Admin</p>
+            <p class="designation">Developer</p>
         </div>
         </div>
         <!-- Sidebar Menu-->
@@ -18,7 +18,7 @@
             <li class="{{ Request::is('admin/tags*') ? 'active' : '' }}"><a href="{{ url('/admin/tags') }}"><i class="fa fa-dashboard"></i><span>tags</span></a></li>
             <li class="{{ Request::is('admin/quotes*') ? 'active' : '' }}"><a href="{{ url('/admin/quotes') }}"><i class="fa fa-dashboard"></i><span>Quotes</span></a></li>
             <hr>
-            <li class="{{ Request::is('admin/settings*') ? 'active' : '' }}"><a href="{{ url('/admin/settings') }}"><i class="fa fa-dashboard"></i><span>Settings</span></a></li>
+            <!-- <li class="{{ Request::is('admin/settings*') ? 'active' : '' }}"><a href="{{ url('/admin/settings') }}"><i class="fa fa-dashboard"></i><span>Settings</span></a></li> -->
         </ul>
     </section>
 </aside>

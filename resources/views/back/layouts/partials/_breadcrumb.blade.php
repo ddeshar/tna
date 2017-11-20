@@ -1,4 +1,4 @@
-<div class="page-title">
+<!-- <div class="page-title">
     <div>
         <h1><i class="fa fa-dashboard"></i> Blank Page</h1>
         <p>Start a beautiful journey here</p>
@@ -10,4 +10,4 @@
             <li><a href="#">Blank Page</a></li>
         </ul>
     </div>
-</div>
+</div> -->

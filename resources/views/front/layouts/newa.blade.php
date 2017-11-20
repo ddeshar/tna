@@ -5,7 +5,7 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <html>
   <head>
-    <title>App Name - @yield('title')</title>
+    <title>@yield('title') - TNA Thai Nepali Association</title>
 
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -22,7 +22,7 @@
     <meta property="og:image" content="@yield('og-image')">
     <meta property="og:description" content="@yield('og-description')">
 
-    <meta property="og:site_name" content="ddeshar.com.np">
+    <meta property="og:site_name" content="http://tnathailand.org/">
     <meta property="og:image:width" content="800px">
     <meta property="og:image:height" content="500px">
 
@@ -50,15 +50,9 @@
   </head>
 
     <body>
-        <!-- @section('sidebar')
-            This is the master sidebar.
-        @show -->
-
+    
             @yield('content')
-        <!-- <div class="container">
-        </div> -->
-
-
+    
     <!-- JS Global Compulsory -->
     <script type="text/javascript" src="{{ asset('assets/js/jquery-1.8.2.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/modernizr.custom.js')}}"></script>
@@ -75,19 +69,15 @@
         });
     </script>
     <!--[if lt IE 9]>
-    <script src="assets/js/respond.js"></script>
     <![endif]-->
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-29166220-1']);
-        _gaq.push(['_setDomainName', 'htmlstream.com']);
-        _gaq.push(['_trackPageview']);
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109955654-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        gtag('config', 'UA-109955654-1');
     </script>
 
     @yield('footer_scripts')

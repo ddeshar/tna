@@ -1,10 +1,10 @@
 @extends('front.layouts.newa')
 
-@section('title', '')
+@section('title', $article->title )
 
-@section('keywords', '')
-@section('description', '')
-@section('author', '')
+@section('keywords', $article->meta_keywords )
+@section('description', $article->meta_description )
+@section('author', $article->user->name)
 
 @section('og-url', '')
 @section('og-image', '')

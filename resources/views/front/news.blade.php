@@ -1,6 +1,6 @@
 @extends('front.layouts.newa')
 
-@section('title', '')
+@section('title', 'News & Events')
 
 @section('keywords', '')
 @section('description', '')

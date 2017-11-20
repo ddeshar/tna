@@ -1,6 +1,6 @@
 @extends('front.layouts.newa')
 
-@section('title', '')
+@section('title', $categorys->name )
 
 @section('keywords', '')
 @section('description', '')

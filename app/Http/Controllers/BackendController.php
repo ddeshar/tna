@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Backend;
+use App\Posts;
+use App\Pages;
+use App\Banners;
+use App\Boardmembers;
+
 use Illuminate\Http\Request;
+use DB;
 
 class BackendController extends Controller
 {
@@ -22,6 +28,11 @@ class BackendController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        return view('back.index');
+            $posts = DB::table('posts')->count();
+            $pages = DB::table('pages')->count();
+            $banners = DB::table('banners')->count();
+            $board_members = DB::table('board_members')->count();
+
+        return view('back.index', compact('posts','pages','banners','board_members'));
     }
 }
