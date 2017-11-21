@@ -14,6 +14,8 @@
                 <p><a class="btn btn-primary icon-btn" href="{{ route('quotes.edit', $quotes->quotes_id) }}"><i class="fa fa-edit"></i>Edit Quotes</a></p>
             </div>
                 <p>{{ $quotes->quote_detail or "" }}</p>
+                    {{ $quotes->Boardmembers->position->bpost_name or "" }}
+
         </div>
     </div>
 @endsection

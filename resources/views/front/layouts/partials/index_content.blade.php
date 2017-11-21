@@ -64,11 +64,11 @@
                         <div class="item active">
                             <div class="testimonial">
                                 <div class="testimonial-body">
-                                    <p>I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.</p>
+                                    <p>{{$quoterand->quote_detail}}</p>
                                 </div>
                                 <div class="testimonial-author">
                                     <span class="arrow"></span>
-                                    <span class="name">Dipendra Deshar</span>, Web Administrator, Wami On Code. 
+                                    <span class="name">{{ $quoterand->Boardmembers->board_name or "" }}</span>, {{ $quoterand->Boardmembers->position->bpost_name or "" }}
                                 </div>
                             </div>
                         </div><!--/carousel-inner-->
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="testimonial-author">
                                     <span class="arrow"></span>
-                                    <span class="name">{{ $quote->Boardmembers->board_name or "" }}</span>, {{ $quote->Boardmembers->board_position or "" }}
+                                    <span class="name">{{ $quote->Boardmembers->board_name or "" }}</span>, {{ $quote->Boardmembers->position->bpost_name or "" }}
                                 </div>
                             </div>
                         </div><!--/carousel-inner-->
@@ -111,9 +111,9 @@
                                 @endforeach
                             @endif
                             <div class="item active">
-                                <img src="assets/img/carousel/3.jpg" alt="">
+                                <img src="{{ asset('images/banners/'. $galleryrand->banner_image  ) }}" alt="">
                                 <div class="carousel-caption">
-                                <p>Welcome to tna official</p>
+                                <p>{{ $galleryrand->banner_name }}</p>
                                 </div>
                             </div>
                             </div>
@@ -132,18 +132,6 @@
         <div class="span3">
             <!-- Posts -->
                 @include('front.layouts.partials._Latest_Update')
-
-            <!-- TNA in Media -->
-            {{--  <div class="blog-twitter">
-                <div class="headline"><h3>TNA in Media</h3></div>
-                <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
-                <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
-                <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
-                <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
-                <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
-                <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
-                <p><a href="#">At vero eos et accusamus et iusto odio.</a><span>5 hours ago</span></p>
-            </div>  --}}
 
         </div><!--/span3-->
     </div><!--/row-fluid-->

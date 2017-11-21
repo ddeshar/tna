@@ -10,6 +10,10 @@ use App\Posts;
 use App\Quotes;
 use App\Tags;
 
+use App\Boarddepartments;
+use App\Boardpost;
+use App\Province;
+
 use Mail;
 use Session;
 
@@ -23,6 +27,9 @@ class FrontController extends Controller{
         $gallerys = Banners::all()->where('banner_position', '=', 3)->where('banner_status', '=', 'PUBLISHED');
         $quotes = Quotes::all();
         
+        $galleryrand = Banners::inRandomOrder()->where('banner_position', '=', 3)->where('banner_status', '=', 'PUBLISHED')->first();
+        $quoterand = Quotes::inRandomOrder()->first();
+        
         $newss = Posts::where('featured', '=', 1)->orderBy('created_at', 'desc')->take(10)->get();
         $posts = Posts::orderBy('created_at', 'desc')->take(10)->get();
         $postfooters = Posts::orderBy('created_at', 'desc')->take(3)->get();
@@ -32,7 +39,7 @@ class FrontController extends Controller{
         $third_post = Pages::orderBy('created_at', 'ASC')->skip(2)->take(1)->get()->first();
 
         
-        return view('front.index', compact('banners','sponsors','gallerys','posts','newss','quotes','postfooters','first_post','second_post','third_post'));
+        return view('front.index', compact('banners','sponsors','gallerys','galleryrand','quoterand','posts','newss','quotes','postfooters','first_post','second_post','third_post'));
     }
 
     public function about(){

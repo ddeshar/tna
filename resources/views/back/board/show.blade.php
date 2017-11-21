@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="page-header">
-                        <h1 id="typography">{{ $board->board_position }}</h1>            
+                        <h1 id="typography">{{ $board->position->bpost_name }}</h1>            
                     </div>
                 </div>
             </div>
@@ -21,9 +21,9 @@
                 <div class="col-lg-4">
                     <p>{{$board->board_name}}</p>
 
-{{ $board->department->department_name }}
-{{ $board->position->bpost_name }}
-{{ $board->province->PROVINCE_NAME_ENG }}
+                        {{ $board->department->department_name }}
+                        {{ $board->position->bpost_name }}
+                        {{ $board->province->PROVINCE_NAME_ENG }}
 
                 </div>
                 <div class="col-lg-4">
