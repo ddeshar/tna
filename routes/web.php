@@ -40,6 +40,7 @@ Route::group([
       'posttag' => 'PosttagController',
       'quotes' => 'QuotesController',
       'settings' => 'SettingsController',
+      'user' => 'UserController',
       'tags' => 'TagsController'
     ]);
 

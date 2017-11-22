@@ -25,9 +25,7 @@
                         <tr>
                             <th>id</th>
                             <th>Title</th>
-                            <th>excerpt</th>
                             <th>Status</th>
-                            <th>featured</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -38,9 +36,7 @@
                                 <?php $i++ ?>
                                 <td>{{ $i }}</td>
                                 <td>{{ $page->title or "" }}</td>
-                                <td>{{ $page->excerpt or "" }}</td>
                                 <td>{{ $page->status or "" }}</td>
-                                <td>{{ $page->slug or "" }}</td>
                                 <td>
                                     <div class="btn-group pull-right">
                                         <a class="btn btn-primary" href="{{ route('pages.show', $page->id) }}"><i class="fa fa-lg fa-eye"></i></a>

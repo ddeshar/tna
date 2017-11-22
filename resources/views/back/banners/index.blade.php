@@ -40,9 +40,9 @@
                             <tr>
                                 <?php $i++ ?>
                                 <td>{{ $i }}</td>
-                                <td>{{ $banner->banner_title or "" }}</td>
+                                <td>{{ $banner->banner_name or "" }}</td>
                                 <td>{{ $banner->banner_image or "" }}</td>
-                                <td>{{ $banner->banner_positon or "" }}</td>
+                                <td>{{ $banner->banner_position or "" }}</td>
                                 <td>{{ $banner->banner_status or "" }}</td>
                                 <td>
                                     <div class="btn-group pull-right">

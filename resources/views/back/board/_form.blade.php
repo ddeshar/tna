@@ -52,11 +52,11 @@
 
                 <div class="form-group">
                     <input name="board_image" class="form-control" type="file" id="logo-id" >
-                    @if(!$board->board_id)
-                        <img class="thumbnail img-preview" src="#" title="" width="100%" height="auto">
-                    @else
-                        <img src="{{ asset('images/board/'. $board->board_image) }}" alt="photo" width="100%" height="auto">
-                    @endif
+                        @if(!$board->board_id)
+                            <img class="thumbnail img-preview" src="#" title="" width="20%" height="auto">
+                        @else
+                            <img src="{{ asset('images/board/'. $board->board_image) }}" alt="photo" width="20%" height="auto">
+                        @endif
                 </div>
 
             </div>

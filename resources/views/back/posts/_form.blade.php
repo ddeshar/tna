@@ -36,8 +36,12 @@
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="hidden" name="featured" value="0">
-                        <input type="checkbox" name="featured" value="1">
+                            <input type="hidden" name="featured" value="0">
+                        @if(!$post->featured)
+                            <input type="checkbox" name="featured" value="1"> featured
+                        @else
+                            <input type="checkbox" name="featured" value="0" checked > featured
+                        @endif
                     </label>
                 </div>
                 <div class="form-group">

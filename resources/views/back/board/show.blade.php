@@ -19,20 +19,16 @@
             <!-- Headings-->
             <div class="row">
                 <div class="col-lg-4">
-                    <p>{{$board->board_name}}</p>
-
-                        {{ $board->department->department_name }}
-                        {{ $board->position->bpost_name }}
-                        {{ $board->province->PROVINCE_NAME_ENG }}
-
+                    <img src="{{ asset('images/board/'. $board->board_image  ) }}" alt="{{ $board->board_name }}" alt="" class="img-rounded img-responsive" />
                 </div>
                 <div class="col-lg-4">
-                    <p>{{$board->board_year}}</p>
+                    <p>Name : {{$board->board_name or "-"}}</p>
+                    <p>Department : {{ $board->department->department_name or "-" }}</p>    
+                    <p>Position : {{ $board->position->bpost_name or "-" }}</p>    
+                    <p>Branch : {{ $board->province->PROVINCE_NAME_ENG or "-" }}</p>
+                    <p>Year : {{$board->board_year or "-"}}</p>
                 </div>
             </div>
-            
-            <img src="{{ asset('images/board/'. $board->board_image  ) }}" alt="{{ $board->board_name }}" alt="" class="img-rounded img-responsive" />
-
         </div>
     </div>
 @endsection

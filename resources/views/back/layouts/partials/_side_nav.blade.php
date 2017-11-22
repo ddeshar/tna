@@ -17,8 +17,8 @@
             <li class="{{ Request::is('admin/pages*') ? 'active' : '' }}"><a href="{{ url('/admin/pages') }}"><i class="fa fa-dashboard"></i><span>Pages</span></a></li>
             <li class="{{ Request::is('admin/tags*') ? 'active' : '' }}"><a href="{{ url('/admin/tags') }}"><i class="fa fa-dashboard"></i><span>tags</span></a></li>
             <li class="{{ Request::is('admin/quotes*') ? 'active' : '' }}"><a href="{{ url('/admin/quotes') }}"><i class="fa fa-dashboard"></i><span>Quotes</span></a></li>
+            <li class="{{ Request::is('admin/user*') ? 'active' : '' }}"><a href="{{ url('/admin/user') }}"><i class="fa fa-dashboard"></i><span>user</span></a></li>
             <hr>
-            <!-- <li class="{{ Request::is('admin/settings*') ? 'active' : '' }}"><a href="{{ url('/admin/settings') }}"><i class="fa fa-dashboard"></i><span>Settings</span></a></li> -->
         </ul>
     </section>
 </aside>

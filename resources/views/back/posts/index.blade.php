@@ -27,7 +27,7 @@
                             <th>Title</th>
                             <th>category</th>
                             <th>Status</th>
-                            <th>featured</th>
+                            <th>featured | View</th>
                             <th>Action</th>
                         </tr>
                     </thead>

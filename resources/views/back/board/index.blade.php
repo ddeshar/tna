@@ -21,7 +21,8 @@
                             <th>Id</th>
                             <th>Name</th>
                             <th>Position</th>
-                            <th>Image</th>
+                            <th>department</th>
+                            <th>Branch</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -32,8 +33,9 @@
                                 <?php $i++ ?>
                                 <td>{{ $i }}</td>
                                 <td>{{ $board->board_name or "" }}</td>
-                                <td>{{ $board->board_position or "" }}</td>
-                                <td>{{ $board->board_image or "" }}</td>
+                                <td>{{ $board->position->bpost_name or "" }}</td>
+                                <td>{{ $board->department->department_name or "" }}</td>
+                                <td>{{ $board->province->PROVINCE_NAME_ENG or "" }}</td>
                                 <td>
                                     <div class="btn-group pull-right">
                                         <a class="btn btn-primary" href="{{ route('board.show', $board->board_id) }}"><i class="fa fa-lg fa-eye"></i></a>
