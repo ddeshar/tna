@@ -19,4 +19,10 @@
         <div class="blog-img"><img src="{{ asset('images/posts/'. $article->image  ) }}" alt="{{ $article->title }}" /></div>
          <p>{!! $article->body !!}</p>
     </div><!--/blog-->
+
+        <h2 class="heading">Share this Article on </h2>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ urlencode(Request::fullUrl()) }}','popup','width=600,height=600'); return false;"><div class="facebook-hover social-slide"></div></a>
+        <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}" target="popup" onclick="window.open('https://twitter.com/intent/tweet?url={{ urlencode(Request::fullUrl()) }}','popup','width=600,height=600'); return false;"><div class="twitter-hover social-slide"></div></a>
+        <a href="https://plus.google.com/share?url={{ urlencode(Request::fullUrl()) }}"  target="popup"  onclick="window.open('https://plus.google.com/share?url={{ urlencode(Request::fullUrl()) }}','popup','width=600,height=600'); return false;"> <div class="google-hover social-slide"></div> </a>
+
 </div>
